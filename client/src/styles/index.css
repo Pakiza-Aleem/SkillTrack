@@ -1,0 +1,285 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f7f7f7;
+  color: #171717;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button,
+input,
+select {
+  font: inherit;
+}
+
+/* ================= NAVBAR ================= */
+
+nav {
+  height: 68px;
+  padding: 0 7%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #111111;
+  color: white;
+  border-bottom: 3px solid #e00000;
+}
+
+nav a {
+  font-weight: 600;
+}
+
+nav a:hover {
+  color: #ff3333;
+}
+
+nav div {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+nav button {
+  padding: 9px 16px;
+  border: 1px solid #e00000;
+  border-radius: 7px;
+  background: transparent;
+  color: white;
+  cursor: pointer;
+}
+
+nav button:hover {
+  background: #e00000;
+}
+
+/* ================= GENERAL ================= */
+
+main {
+  width: min(1050px, 90%);
+  margin: 45px auto;
+}
+
+h1 {
+  margin: 0 0 8px;
+  font-size: 32px;
+  color: #111111;
+}
+
+h2 {
+  margin-top: 0;
+}
+
+p {
+  line-height: 1.6;
+}
+
+/* ================= LOGIN ================= */
+
+.login-page {
+  min-height: calc(100vh - 68px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+.login-card {
+  width: min(420px, 100%);
+  padding: 38px;
+  background: white;
+  border-radius: 14px;
+  border: 1px solid #dddddd;
+  border-top: 5px solid #e00000;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.08);
+}
+
+.login-card h1 {
+  margin-bottom: 8px;
+}
+
+.login-subtitle {
+  margin-bottom: 28px;
+  color: #666666;
+}
+
+.login-card form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.login-card label {
+  margin-top: 8px;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+input,
+select {
+  width: 100%;
+  padding: 12px 14px;
+  background: white;
+  color: #171717;
+  border: 1px solid #cccccc;
+  border-radius: 7px;
+  outline: none;
+}
+
+input:focus,
+select:focus {
+  border-color: #e00000;
+  box-shadow: 0 0 0 2px rgba(224, 0, 0, 0.08);
+}
+
+button {
+  padding: 11px 18px;
+  border: none;
+  border-radius: 7px;
+  background: #e00000;
+  color: white;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #b80000;
+}
+
+button:disabled {
+  background: #aaaaaa;
+  cursor: not-allowed;
+}
+
+/* ================= ERROR ================= */
+
+.error-message {
+  margin: 10px 0;
+  padding: 10px 12px;
+  background: #fff1f1;
+  color: #c00000;
+  border-left: 4px solid #e00000;
+  border-radius: 5px;
+}
+
+/* ================= SESSION PAGE ================= */
+
+main > form {
+  margin: 28px 0;
+  padding: 22px;
+  background: white;
+  border: 1px solid #dddddd;
+  border-radius: 12px;
+  display: grid;
+  grid-template-columns: 2fr 1fr 100px auto;
+  gap: 12px;
+}
+
+main > section {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+/* ================= SESSION CARD ================= */
+
+article {
+  padding: 22px;
+  background: white;
+  border: 1px solid #dddddd;
+  border-radius: 12px;
+  border-top: 4px solid #e00000;
+  box-shadow: 0 5px 18px rgba(0, 0, 0, 0.06);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+article:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 9px 24px rgba(0, 0, 0, 0.1);
+}
+
+article h2 {
+  color: #111111;
+}
+
+article p {
+  color: #666666;
+}
+
+article a {
+  display: inline-block;
+  margin-right: 8px;
+  padding: 8px 13px;
+  border-radius: 6px;
+  background: #111111;
+  color: white;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+article a:hover {
+  background: #333333;
+}
+
+article button {
+  padding: 8px 13px;
+  background: #e00000;
+  font-size: 14px;
+}
+
+article button:hover {
+  background: #b80000;
+}
+
+/* ================= EDIT PAGE ================= */
+
+main form label {
+  font-weight: 600;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 800px) {
+  main > form {
+    grid-template-columns: 1fr;
+  }
+
+  main > section {
+    grid-template-columns: 1fr;
+  }
+
+  nav {
+    padding: 0 5%;
+  }
+
+  nav div {
+    gap: 12px;
+  }
+}
+
+@media (max-width: 500px) {
+  main {
+    width: 92%;
+    margin: 28px auto;
+  }
+
+  .login-card {
+    padding: 26px;
+  }
+
+  h1 {
+    font-size: 27px;
+  }
+
+  nav {
+    height: auto;
+    min-height: 65px;
+  }
+}
